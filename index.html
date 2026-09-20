@@ -1,0 +1,91 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metropolis Mercantile + Café</title>
+</head>
+
+<body>
+
+  <h1>Metropolis Mercantile + Café</h1>
+  <h2>Drinks Menu</h2>
+
+  <div id="drinks"></div>
+
+  <script>
+    const cafe = {
+      "name": "Metropolis Mercantile + Café",
+      "location": "Newmarket, Ontario",
+      "drinks": [
+        {
+          "name": "Flat White",
+          "category": "Coffee",
+          "served": ["Hot"],
+          "ingredients": [
+            "Espresso",
+            "Steamed milk"
+          ]
+        },
+        {
+          "name": "Vanilla Latte",
+          "category": "Coffee",
+          "served": ["Hot", "Iced"],
+          "ingredients": [
+            "Espresso",
+            "Steamed milk",
+            "Vanilla syrup"
+          ]
+        },
+        {
+          "name": "Mocha",
+          "category": "Coffee",
+          "served": ["Hot", "Iced"],
+          "ingredients": [
+            "Espresso",
+            "Milk",
+            "Chocolate"
+          ]
+        },
+        {
+          "name": "Matcha Latte",
+          "category": "Tea",
+          "served": ["Hot", "Iced"],
+          "ingredients": [
+            "Matcha",
+            "Milk"
+          ]
+        },
+        {
+          "name": "London Fog",
+          "category": "Tea",
+          "served": ["Hot", "Iced"],
+          "ingredients": [
+            "Tea",
+            "Steamed milk",
+            "Vanilla syrup"
+          ]
+        }
+      ]
+    };
+
+    const drinksContainer = document.getElementById("drinks");
+
+    cafe.drinks.forEach(function(drink) {
+      const drinkElement = document.createElement("div");
+
+      drinkElement.innerHTML = `
+        <h3>${drink.name}</h3>
+        <p><strong>Category:</strong> ${drink.category}</p>
+        <p><strong>Served:</strong> ${drink.served.join(", ")}</p>
+        <p><strong>Ingredients:</strong> ${drink.ingredients.join(", ")}</p>
+      `;
+
+      drinksContainer.appendChild(drinkElement);
+    });
+  </script>
+
+</body>
+</html>
+```
